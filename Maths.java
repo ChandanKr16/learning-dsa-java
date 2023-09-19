@@ -2,7 +2,8 @@ public class Maths{
 
 
 	public static void main(String args[]){
-		System.out.println(countDigits(7));
+		//System.out.println(countDigits(7));
+		System.out.println(isPalindrome(3634));
 	}
 
 	private static int countDigits(int n){
@@ -21,6 +22,19 @@ public class Maths{
 
 		return count;*/
 
+	}
+
+	private static boolean isPalindrome(int num){
+		int temp = num;
+		int rev = 0;
+
+		while(temp != 0)
+		{	
+			rev = rev*10 + temp % 10;
+			temp /= 10;
+		}	
+
+		return rev == num;
 	}
 
 
