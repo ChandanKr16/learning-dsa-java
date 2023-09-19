@@ -4,7 +4,8 @@ public class Maths{
 	public static void main(String args[]){
 		//System.out.println(countDigits(7));
 		//System.out.println(isPalindrome(3634));
-		System.out.println(countTrailingZeros(10));
+		//System.out.println(countTrailingZeros(10));
+		printPrimeNumbersSieve(100);
 	}
 
 	private static int countDigits(int n){
@@ -52,6 +53,29 @@ public class Maths{
 	}
 
 
+	private static void printPrimeNumbersSieve(int num){
+
+		boolean isPrime[] = new boolean[num+1];
+
+
+		for(int i = 2; i*i <= num; i++){
+
+			if(!isPrime[i]){
+				for(int j = i*2; j <=  num; j=j+i){
+					isPrime[j] = true;
+				}
+			}
+
+		}
+
+		for(int i = 2; i <= num; i++){
+			if(!isPrime[i]){
+				System.out.print(i + " ");
+			}
+		}
+
+
+	}
 
 
 
